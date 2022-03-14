@@ -32,11 +32,13 @@ function showCountry(data) {
         </div>
     `;
   countriesElem.appendChild(country);
+  country.addEventListener("click", () => {
+    showCountryDetail(data);
+  });
 }
 
 dropDown.addEventListener("click", () => {
   dropElem.classList.toggle("showDropDown");
-  console.log("hello");
 });
 
 const regionName = document.getElementsByClassName("regionName");
@@ -73,3 +75,44 @@ toggle.addEventListener("click", () => {
   document.body.classList.toggle("dark");
   moon.classList.toggle("fas");
 });
+
+const countryModal = document.querySelector(".countryModal");
+
+function showCountryDetail(data) {
+  countryModal.classList.toggle("show");
+  countryModal.innerHTML = `
+   <button class="back">Back</button>
+      <div class="modal">
+        <div class="leftModal">
+          <img src="${data.flag}" alt="flag" />
+        </div>
+        <div class="rightModal">
+          <h1>${data.name}</h1>
+          <div class="modalInfo">
+            <div class="innerLeft inner">
+              <p><strong>Native Name: </strong>${data.nativeName}</p>
+              <p><strong>Population: </strong>${data.population}</p>
+              <p><strong>Region: </strong>${data.region}</p>
+              <p><strong>Sub Region: </strong>${data.subregion}</p>
+              <p><strong>Capital: </strong>${data.capital}</p>
+            </div>
+            <div class="innerRight inner">
+              <p><strong>Top Level Domain: </strong>.${data.topLevelDomain.map(
+                (elem) => elem
+              )}</p>
+              <p><strong>Currencies: </strong>${data.currencies.map(
+                (elem) => elem.name
+              )}</p>
+              <p><strong>Languages: </strong>${data.languages.map(
+                (elem) => elem.name
+              )}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+  `;
+  const back = countryModal.querySelector(".back");
+  back.addEventListener("click", () => {
+    countryModal.classList.toggle("show");
+  });
+}

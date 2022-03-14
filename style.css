@@ -153,22 +153,24 @@ i {
 
 .countryModal {
   position: fixed;
-  top: 0;
   left: 0;
+  top: 0;
   width: 100%;
   height: 100%;
   background: var(--bgColor);
-
   padding: 30px;
 }
 .back {
   position: absolute;
   top: 3rem;
   left: 30px;
-  background: rgba(235, 236, 170, 0.867);
+  background: var(--countryBgColor);
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
   padding: 10px 20px;
+  cursor: pointer;
   font-size: 16px;
+  letter-spacing: 1px;
 }
 .modal {
   display: flex;
@@ -180,22 +182,31 @@ i {
 .leftModal {
   width: 50%;
 }
-.leftModal-img {
-  height: 100%;
+.leftModal img {
   width: 100%;
+  height: 100%;
   object-fit: cover;
 }
-
 .rightModal {
   width: 50%;
-  margin-left: 20px;
+  margin-left: 40px;
 }
-
 .modalInfo {
   display: flex;
-  flex-direction: column;
   justify-content: space-between;
-  align-items: center;
-  height: 100%;
-  width: 100%;
+}
+.rightModal h1 {
+  margin: 10px 0;
+  letter-spacing: 1px;
+  font-size: 40px;
+}
+.inner p {
+  letter-spacing: 1px;
+}
+.inner p > strong {
+  font-weight: 600;
+}
+
+.show {
+  display: none;
 }
