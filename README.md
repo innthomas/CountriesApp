@@ -1,3 +1,3 @@
 # CountriesApp
 
-Check it out at [app](https://countries-app-taupe-alpha.vercel.app/)
+For a demo, check it out [here](https://countries-app-taupe-alpha.vercel.app/)
