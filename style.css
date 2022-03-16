@@ -214,6 +214,7 @@ i {
 /* Mobile */
 @media only screen and (max-width: 375px) {
   .container-mobile,
+  .modal,
   .inner {
     flex-direction: column;
   }
